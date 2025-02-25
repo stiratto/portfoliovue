@@ -118,7 +118,7 @@ watch(currentPosition, (newValue) => {
     tl.fromTo('.t', { x: '0', rotate: 0, duration: 1 }, { x: '-100', rotate: 90, duration: 1 }, 0)
   }
 })
-function handleClickOutside(e) {
+function handleClickOutside(e: any) {
   if (containerRef.value && !containerRef.value.contains(e.target)) {
     activeClass.value = false
   }
