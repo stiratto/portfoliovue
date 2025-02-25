@@ -7,7 +7,7 @@ const posts = ref([]);
 
 onMounted(async () => {
   window.Buffer = Buffer
-  const files = import.meta.glob('@/blog-files/*.md', { as: 'raw' });
+  const files = import.meta.glob('@/blog-files/*.md', { query: '?raw', import: 'default' });
 
   const loadedPosts = []
   for (const path in files) {
