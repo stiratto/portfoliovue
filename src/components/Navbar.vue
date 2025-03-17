@@ -156,7 +156,7 @@ function scrollNavbarHandler(): void {
     <button class="hamburguer" :class="{ active: activeClass }" @click="activeClass = !activeClass"></button>
 
     <transition @enter="onEnter" @leave="onLeave">
-      <ul v-if="activeClass" id="nav-list"
+      <ul v-if="isMobile() ? !activeClass : activeClass" id="nav-list"
         class="absolute right-[50px] top-[10px] flex shadow-xl flex-col items-center justify-center bg-[#1c1c1c] text-white p-16">
         <div class="flex flex-col items-start justify-center navItemsDiv">
           <router-link v-for="(item, index) in items" :id="Object.keys(item)[0]" :to="Object.values(item)[0]"
