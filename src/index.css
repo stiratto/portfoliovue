@@ -1,0 +1,176 @@
+/* ./index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbaractive {
+  background-color: #3523a6;
+}
+
+.blog-content {
+  padding: 10px;
+  font-family: Arial;
+  font-size: large;
+}
+/* Encabezados dentro de .blog-content */
+.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
+    margin: 20px 0;
+    font-weight: bold;
+    
+}
+
+
+.blog-content h1 {
+    width: fit-content;
+
+    border-bottom: 3px solid #86EFAC;
+
+}
+
+.blog-content h1 {
+    font-size: 2.5em;
+}
+
+.blog-content h2 {
+    font-size: 2em;
+}
+
+.blog-content h3 {
+    font-size: 1.75em;
+}
+
+.blog-content h4 {
+    font-size: 1.5em;
+}
+
+.blog-content h5 {
+    font-size: 1.25em;
+}
+
+.blog-content h6 {
+    font-size: 1em;
+}
+
+/* Párrafos dentro de .blog-content */
+.blog-content p {
+    margin: 20px 0;
+    font-size: 1em;
+}
+
+/* Listas dentro de .blog-content */
+.blog-content ul, .blog-content ol {
+    margin: 20px 0;
+    padding-left: 20px;
+    list-style: circle;
+}
+
+.blog-content ul li, .blog-content ol li {
+    margin-bottom: 10px;
+}
+
+/* Enlaces dentro de .blog-content */
+.blog-content a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.blog-content a:hover {
+    text-decoration: underline;
+}
+
+/* Imágenes dentro de .blog-content */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Citas dentro de .blog-content */
+.blog-content blockquote {
+    border-left: 4px solid #ddd;
+    margin: 20px 0;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+/* Código en línea dentro de .blog-content */
+.blog-content code {
+    font-family: 'Courier New', monospace;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Bloques de código dentro de .blog-content */
+.blog-content pre {
+    font-family: 'Courier New', monospace;
+    background-color: #111111;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Tablas dentro de .blog-content */
+.blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.blog-content table th, .blog-content table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.blog-content table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Listas de tareas dentro de .blog-content */
+.blog-content ul li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.navbarinactive {
+  background-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+body {
+  /*background-color: #5B7553;*/
+  background-color: #3523a6;
+  padding-top: 6rem;
+  color: white;
+  font-family: 'acumin-pro';
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (min-width: 760px) {
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    overflow: auto !important;
+  }
+}
+
+
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #86EFAC;
+}
