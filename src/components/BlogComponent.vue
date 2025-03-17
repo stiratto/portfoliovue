@@ -10,7 +10,6 @@ let post = ref({})
 onMounted(async () => {
   window.Buffer = Buffer
   const route = useRoute()
-  const markdownRef = ref()
 
   const md = markdownit({
     highlight: function (str, lang) {

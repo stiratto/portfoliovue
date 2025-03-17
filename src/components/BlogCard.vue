@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import { MoveUpRight } from 'lucide-vue-next'
-import type { PropType } from 'vue'
 
-const props = defineProps({
+defineProps({
   title: { type: String, required: true },
   description: { type: String, required: true },
   thumbnail: { type: String, required: true },

@@ -17,7 +17,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, from) {
+  scrollBehavior() {
     return { top: 0, behavior: 'smooth' }
   },
 })

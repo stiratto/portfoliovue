@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { watch, ref, onMounted, onUnmounted, nextTick, useTemplateRef } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 import items from '@/consts/navbar-items'
 import socials from '@/consts/social-items'
 
@@ -118,7 +117,7 @@ watch(currentPosition, (newValue) => {
     tl.fromTo('.t', { x: '0', rotate: 0, duration: 1 }, { x: '-100', rotate: 90, duration: 1 }, 0)
   }
 })
-function handleClickOutside(e) {
+function handleClickOutside(e: any) {
   if (containerRef.value && !containerRef.value.contains(e.target)) {
     activeClass.value = false
   }

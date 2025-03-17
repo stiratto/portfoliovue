@@ -28,7 +28,7 @@ const props = defineProps({
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
-      <h1 className="text-2xl font-extrabold md:text-5xl font-bold text-[#B0E0A8]
+      <h1 className="text-2xl  md:text-5xl font-bold 
         text-[#86EFAC] ">
         {{ title }}
       </h1>

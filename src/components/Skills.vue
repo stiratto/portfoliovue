@@ -1,5 +1,5 @@
 <script setup>
-import { Package, Layout SquareTerminal } from 'lucide-vue-next';
+import { Package, Layout, SquareTerminal } from 'lucide-vue-next';
 
 </script>
 
