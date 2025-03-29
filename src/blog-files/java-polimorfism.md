@@ -66,7 +66,6 @@ class's instantiation. Like this:
 
 ```java
  LibraryItem item = new LibraryItem() 
- 
 ```
 
 In this code, LibraryItem is the reference type, item is a reference to the actual object, not the actual object but a pointer to the object in the heap, but let's not get into that. Let's just say that `item` is the actual object.
