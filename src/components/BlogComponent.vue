@@ -11,16 +11,24 @@ onMounted(async () => {
   window.Buffer = Buffer
   const route = useRoute()
 
+  // Actual default values
   const md = markdownit({
     highlight: function (str, lang) {
       if (lang && hljs.getLanguage(lang)) {
         try {
-          return hljs.highlight(str, { language: lang }).value;
-        } catch (__) { }
+          return '<pre><code class="hljs">' +
+            hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+            '</code></pre>';
+        } catch (e) {
+          console.log(e)
+        }
       }
-      return ''; // use external default escaping
+
+      return '<pre><code class="hljs">' + md.utils.escapeHtml(str) + '</code></pre>';
     }
-  })
+  });
+
+
 
   const filename = route.params.name.replace(/[-]+/g, " ").replace(/\b[a-z]/g, (letter) => {
     return letter.toUpperCase();

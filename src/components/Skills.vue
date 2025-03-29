@@ -35,7 +35,8 @@ import { Package, Layout, SquareTerminal } from 'lucide-vue-next';
         <p class="text-start">
           All the Web Apps built by me are designed, maintained and developed by me.
           Using tools like React on its majority, VueJS as a second tool and Typescript under the
-          hood because of its readability and static-typed-like developing.
+          hood because of its readability and static-typed-like
+          developing.
         </p>
       </div>
       <div class="w-full text-white gap-8 rounded-2xl p-4 flex flex-col justify-center">
