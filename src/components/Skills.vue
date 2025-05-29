@@ -1,5 +1,5 @@
 <script setup>
-import { Package, Layout, SquareTerminal } from 'lucide-vue-next';
+import { Package, Layout, SquareTerminal, Bot } from 'lucide-vue-next';
 
 </script>
 
@@ -47,9 +47,21 @@ import { Package, Layout, SquareTerminal } from 'lucide-vue-next';
         <p class="text-start">
           As a person that likes "freedom" when coming to personal environments and work
           environments, I've discovered Linux like 3-2 years ago, it
-          was my main OS for 1-2 years. I've explored various distros
+          has beem my main OS for 1-2 years. I've explored various distros
           like GNOME, KDE and Arch which was my main
-          distro along with the the i3 DE.
+          distro. Right now I use EndeavourOS with the i3 window
+          manager.
+        </p>
+      </div>
+      <div class="w-full text-white gap-8 rounded-2xl p-4 flex flex-col justify-center">
+        <h1 class="text-5xl text-green-300 font-bold text-start tracking-tight flex gap-2">
+          <Bot size=40 />
+          Automation
+        </h1>
+        <p class="text-start">
+          I've automated Spotify, Youtube, Uber Eats Manager.
+          I also automate daily tasks on my workflow, and it's easier
+          to do that on Linux.
         </p>
       </div>
     </div>
