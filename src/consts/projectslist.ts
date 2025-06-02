@@ -4,7 +4,7 @@ import AwsIcon from '@/assets/aws.vue'
 
 const projects = [
   {
-    title: 'Torrente Cabinets',
+    title: 'torrente cabinets',
     description:
       'An E-Commerce clone made for a cabinet business in Miami with an authentication system, roles system (admin, visitor and dealer). Requests for dealer and admin approve, email sending system and other.',
     thumbnail: '/torrentemockup.png',
@@ -17,7 +17,7 @@ const projects = [
     ],
   },
   {
-    title: 'Nyctara Perfumes',
+    title: 'nyctara perfumes',
     description: 'An E-Commerce for a perfume business.',
     thumbnail: '/wallhaven-4xo2jo_1920x1080.png',
     github: 'https://github.com/stiratto',
@@ -29,7 +29,7 @@ const projects = [
     ],
   },
   {
-    title: 'Outlet Zone',
+    title: 'outlet zone',
     description: 'An E-Commerce made for a refrigerator, washing machine business.',
     thumbnail: '/outletmockuptransparent.png',
     github: 'https://github.com/stiratto',
