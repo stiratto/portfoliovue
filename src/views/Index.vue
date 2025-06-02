@@ -26,55 +26,59 @@ function onEnter(el: any) {
 </script>
 
 <template>
-  <section
-    class="w-full relative flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center py-8 sm:px-[9em] md:py-0 px-4 "
-    ref="main">
-    <div class="h-[62vh] lg:h-[90vh] w-full text-white gap-8 rounded-2xl p-4 flex flex-col lg:justify-center">
-      <span class="relative top-4 font-bold w-min text-white text-sm
-        tracking-widest before:content-[' '] before:w-full before:h-1
-        before:absolute before:top-4 before:bg-[#ffdd33]">DEVELOPER</span>
-      <transition tag="div" v-show="activeClass" @enter="onEnter"
-        class="text-5xl md:text-8xl flex text-[#ffdd33] font-extrabold text-start">
-        <h1 id="full" class="tracking-tighter">
-          Jesus <br />
-          Moran
-        </h1>
-      </transition>
-      <p class="lg:text-lg text-start max-w-sm text-[#73D936]">
-        +3 years of experience. Software Engineer from Maracaibo, Venezuela 🇻🇪.
-      </p>
+  <main class="flex flex-col gap-24">
 
-      <div class="flex gap-8 btn-div">
-        <button class="btn-item uppercase text-sm tracking-widest" @click="scrollTo(sectionSkills)">
-          Skills
-        </button>
-        <button class="btn-item uppercase text-sm tracking-widest" @click="scrollTo(sectionWork)">
-          My Work
-        </button>
+    <section class="w-full relative flex flex-col-reverse lg:flex-row
+    lg:justify-between lg:items-center    px-4
+    border border-[#ffdd33]" ref="main">
+      <div class="py-24 w-full text-white gap-8 rounded-2xl p-4 flex flex-col lg:justify-center">
+        <!--<span class="relative top-4 font-bold w-min text-white text-sm
+        tracking-widest before:content-[' '] before:w-full before:h-1
+        before:absolute before:top-4
+        before:bg-[#ffdd33]">DEVELOPER</span> -->
+        <transition tag="div" v-show="activeClass" @enter="onEnter"
+          class="text-5xl md:text-8xl flex text-[#ffdd33] font-extrabold text-start">
+          <h1 id="full" class="tracking-tighter !text-[#ffdd33] ">
+            Jesus <br />
+            Moran
+          </h1>
+        </transition>
+        <p class="lg:text-lg text-start max-w-sm text-white">
+          +3 years of experience. Software Engineer from Maracaibo, Venezuela 🇻🇪.
+        </p>
+
+        <div class="flex gap-8 btn-div">
+          <button class="btn-item uppercase text-sm tracking-widest" @click="scrollTo(sectionSkills)">
+            Skills
+          </button>
+          <button class="btn-item uppercase text-sm tracking-widest" @click="scrollTo(sectionWork)">
+            My Work
+          </button>
+        </div>
       </div>
+
+    </section>
+
+    <div ref="sectionProjects">
+      <Projects />
     </div>
 
-    <img src="/person.svg" class="w-[200px] h-[200px] lg:w-auto lg:h-auto lg:max-w-lg " />
-  </section>
+    <div ref="sectionSkills">
+      <Skills></Skills>
+    </div>
 
-  <div ref="sectionProjects">
-    <Projects />
-  </div>
+    <!-- <div ref="sectionWork">
+      <MyWork />
+    </div> -->
 
-  <div ref="sectionSkills">
-    <Skills></Skills>
-  </div>
 
-  <div ref="sectionWork">
-    <MyWork />
-  </div>
-
+  </main>
 </template>
 
 <style scoped>
 .btn-item {
   padding: 10px;
-  border-left: 2px solid #1c1c1c;
+  border-left: 2px solid #96A6C8;
   position: relative;
 }
 
@@ -82,14 +86,14 @@ function onEnter(el: any) {
   position: absolute;
   top: 25%;
   left: 100%;
-  background-color: #0000006b;
+  background-color: #95a99f6b;
   content: '';
   width: 14px;
   height: 14px;
 }
 
 #full {
-  -webkit-text-stroke: 0.5px #73D936;
+  /* -webkit-text-stroke: 0.5px #73D936; */
   background: linear-gradient(#73D936 0 100%) left / 0 no-repeat;
   color: transparent;
   background-clip: text;
