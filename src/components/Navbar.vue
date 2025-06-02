@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { watch, ref, onMounted, onUnmounted, nextTick, useTemplateRef } from 'vue'
+import { ChevronRight } from 'lucide-vue-next'
+
 import items from '@/consts/navbar-items'
 import socials from '@/consts/social-items'
 
@@ -140,62 +142,35 @@ function scrollNavbarHandler(): void {
 
 <template>
   <nav
-    class="fixed z-[1000] flex md:flex-row py-8 justify-between items-center mx-auto w-full transition-all top-0 left-0 px-[20px] md:px-[6em] !bg-transparent"
-    ref="container-ref"
-    :class="{
+    class="z-[1000] flex flex-col py-8 justify-between mx-auto w-full transition-all top-0 left-0 px-[20px] md:px-[6em] !bg-transparent"
+    ref="container-ref" :class="{
       navbaractive: userScrolledUp,
       navbarinactive: !userScrolledUp,
-    }"
-    @mouseover="navbarHovered = true"
-    @mouseleave="navbarHovered = false"
-  >
-    <router-link
-      to="/"
-      class="pointer !border-none text-4xl font-bold text-[#86EFAC] nav-logo transition-all"
-      :class="{ active: activeClass, scrolledNavLogo: !userScrolledUp }"
-    >
-      stira
-      <span class="text-[#1c1c1c] t"> t </span>
-      to
+    }" @mouseover="navbarHovered = true" @mouseleave="navbarHovered = false">
+    <router-link to="/" class="pointer text-sm text-center py-2
+      text-[#95a99f] nav-logo transition-all border border-[#ffdd33]
+      w-full">
+      stiratto portfolio
+      <div class="navSocialsDiv">
+        <a v-for="(item, index) in socials" :id="Object.keys(item)[0]" :href="Object.values(item)[0]"
+          :key="Object.keys(item)[0] + index" class="p-2 nav-social">
+          {{ Object.keys(item)[0] }}
+        </a>
+      </div>
+
     </router-link>
 
-    <button
-      class="hamburguer"
-      :class="{ active: activeClass }"
-      @click="activeClass = !activeClass"
-    ></button>
+    <ul id="nav-list" class="flex shadow-xl
+     text-white border-b border-[#ffdd33] pt-16">
 
-    <transition @enter="onEnter" @leave="onLeave">
-      <ul
-        v-if="activeClass"
-        id="nav-list"
-        class="absolute right-[50px] top-[10px] flex shadow-xl flex-col items-center justify-center bg-[#1c1c1c] text-white p-16"
-      >
-        <div class="flex flex-col items-start justify-center navItemsDiv">
-          <router-link
-            v-for="(item, index) in items"
-            :id="Object.keys(item)[0]"
-            :to="Object.values(item)[0]"
-            :key="Object.keys(item)[0] + index"
-            class="text-lg p-2 nav-item"
-          >
-            {{ Object.keys(item)[0] }}
-          </router-link>
-        </div>
-        <span class="font-bold tracking-widest mt-8">social</span>
-        <div class="navSocialsDiv">
-          <a
-            v-for="(item, index) in socials"
-            :id="Object.keys(item)[0]"
-            :href="Object.values(item)[0]"
-            :key="Object.keys(item)[0] + index"
-            class="text-lg p-2 nav-social"
-          >
-            {{ Object.keys(item)[0] }}
-          </a>
-        </div>
-      </ul>
-    </transition>
+      <div class="flex justify-center navItemsDiv">
+        <router-link v-for="(item, index) in items" :id="Object.keys(item)[0]" :to="Object.values(item)[0]"
+          :key="Object.keys(item)[0] + index" class="text-sm p-2
+          nav-item flex items-center gap-2 ">
+          {{ Object.keys(item)[0] }}
+        </router-link>
+      </div>
+    </ul>
   </nav>
 </template>
 
@@ -224,7 +199,7 @@ function scrollNavbarHandler(): void {
   position: absolute;
   top: 25%;
   left: 70%;
-  background-color: #3523a68b;
+  background-color: #95a99f9b;
   content: '';
   width: 24px;
   height: 14px;
@@ -272,7 +247,7 @@ function scrollNavbarHandler(): void {
 }
 
 @media (max-width: 760px) {
-  nav > ul {
+  nav>ul {
     color: white;
     position: fixed;
     width: 100%;

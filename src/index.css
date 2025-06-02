@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .navbaractive {
-  background-color: #3523a6;
+  background-color: #95A99F;
 }
 
 .blog-content {
@@ -145,10 +145,11 @@ body {
 
 body {
   /*background-color: #5B7553;*/
-  background-color: #3523a6;
-  padding-top: 6rem;
+  background-color: #000000;
+  /* padding-top: 6rem; */
   color: white;
-  font-family: 'acumin-pro';
+  font-family: 'monospace';
+  padding: 0px 100px 0px 100px;
 }
 
 .no-scroll {
@@ -168,5 +169,5 @@ body {
 h1 {
   font-size: 40px;
   font-weight: bold;
-  color: #86EFAC;
+  color: #ffdd33;
 }
