@@ -158,7 +158,7 @@ function scrollNavbarHandler(): void {
       </div>
     </router-link>
 
-    <ul id="nav-list" class="flex  shadow-xl
+    <ul class="flex  shadow-xl
      text-white border-b border-[#ffdd33] p-8 gap-12">
       <router-link v-for="(item, index) in items" :id="Object.keys(item)[0]" :to="Object.values(item)[0]"
         :key="Object.keys(item)[0] + index" class="text-sm
@@ -189,18 +189,5 @@ function scrollNavbarHandler(): void {
 
 
 
-@media (max-width: 760px) {
-  nav>ul {
-    color: white;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    border-radius: 0px !important;
-    right: 0%;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-  }
-}
+
 </style>

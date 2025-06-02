@@ -152,6 +152,23 @@ body {
   padding: 0px 20rem 0px 20rem;
 }
 
+
+@media (max-width: 1000px) {
+    body {
+        padding: 0px 2rem 0px 2rem;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    body {
+        padding: 0px 5rem 0px 5rem;
+    }
+}
+
+
+
 .no-scroll {
   overflow: hidden;
 }

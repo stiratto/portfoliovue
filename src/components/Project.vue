@@ -20,12 +20,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="group relative overflow-hidden shadow-md hover:shadow-xl
-    ">
+  <div class="group relative overflow-hidden shadow-md hover:shadow-xl ">
     <div class="absolute top-0 -0 right-0 z-20 w-full h-full opacity-50 bg-black"></div>
     <div class="relative">
-      <img :src="thumbnail"
-        class="thumbnail-project object-cover aspect-square md:aspect-[16/9] md:max-w-4xl scale-150 rounded-xl group-hover:scale-105 transition-all" />
+      <img :src="thumbnail" class="thumbnail-project object-cover aspect-square
+        md:aspect-[16/9]  scale-150 rounded-xl group-hover:scale-105 transition-all" />
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
