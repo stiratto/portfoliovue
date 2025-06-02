@@ -145,11 +145,11 @@ body {
 
 body {
   /*background-color: #5B7553;*/
-  background-color: #000000;
+  background-color: #080808;
   /* padding-top: 6rem; */
   color: white;
   font-family: 'monospace';
-  padding: 0px 100px 0px 100px;
+  padding: 0px 20rem 0px 20rem;
 }
 
 .no-scroll {
