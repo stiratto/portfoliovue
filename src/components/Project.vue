@@ -20,7 +20,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="group relative overflow-hidden shadow-md hover:shadow-xl">
+  <div class="group relative overflow-hidden shadow-md hover:shadow-xl
+    ">
     <div class="absolute top-0 -0 right-0 z-20 w-full h-full opacity-50 bg-black"></div>
     <div class="relative">
       <img :src="thumbnail"
@@ -29,10 +30,11 @@ const props = defineProps({
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
       <h1 className="text-2xl  md:text-5xl font-bold 
-        text-[#86EFAC] ">
+        text-[#ffdd33] ">
         {{ title }}
       </h1>
-      <p class="max-w-lg text-sm">{{ description }}</p>
+      <p class="max-w-lg text-sm text-white
+      ">{{ description }}</p>
       <ul class="flex gap-4 break-all">
         <li v-for="(tag, index) in tags" :key="index"
           class="tag flex gap-2 items-center p-2 text-sm rounded-full bg-[#111111]">
@@ -63,7 +65,7 @@ const props = defineProps({
   position: absolute;
   top: 25%;
   left: 100%;
-  background-color: #0000008b;
+  background-color: #95a99f8b;
   content: '';
   width: 14px;
   height: 14px;
