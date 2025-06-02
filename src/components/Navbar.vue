@@ -141,12 +141,11 @@ function scrollNavbarHandler(): void {
 </script>
 
 <template>
-  <nav
-    class="z-[1000] flex flex-col py-8 justify-between mx-auto w-full transition-all top-0 left-0 px-[20px] md:px-[6em] !bg-transparent"
-    ref="container-ref" :class="{
-      navbaractive: userScrolledUp,
-      navbarinactive: !userScrolledUp,
-    }" @mouseover="navbarHovered = true" @mouseleave="navbarHovered = false">
+  <nav class="z-[1000] flex flex-col justify-between mx-auto
+       w-full transition-all top-0 left-0 !bg-[#080808] fixed px-24" ref="container-ref" :class="{
+        navbaractive: userScrolledUp,
+        navbarinactive: !userScrolledUp,
+      }" @mouseover="navbarHovered = true" @mouseleave="navbarHovered = false">
     <router-link to="/" class="pointer text-sm text-center py-2
       text-[#95a99f] nav-logo transition-all border border-[#ffdd33]
       w-full">
@@ -157,38 +156,20 @@ function scrollNavbarHandler(): void {
           {{ Object.keys(item)[0] }}
         </a>
       </div>
-
     </router-link>
 
-    <ul id="nav-list" class="flex shadow-xl
-     text-white border-b border-[#ffdd33] pt-16">
-
-      <div class="flex justify-center navItemsDiv">
-        <router-link v-for="(item, index) in items" :id="Object.keys(item)[0]" :to="Object.values(item)[0]"
-          :key="Object.keys(item)[0] + index" class="text-sm p-2
-          nav-item flex items-center gap-2 ">
-          {{ Object.keys(item)[0] }}
-        </router-link>
-      </div>
+    <ul id="nav-list" class="flex  shadow-xl
+     text-white border-b border-[#ffdd33] p-8 gap-12">
+      <router-link v-for="(item, index) in items" :id="Object.keys(item)[0]" :to="Object.values(item)[0]"
+        :key="Object.keys(item)[0] + index" class="text-sm
+          nav-item gap-2 ">
+        {{ Object.keys(item)[0] }}
+      </router-link>
     </ul>
   </nav>
 </template>
 
 <style scoped>
-.scrolledNavLogo {
-  color: transparent;
-  visibility: hidden;
-}
-
-.scrolledNavLogo span {
-  -webkit-text-stroke: 0.5px #86efac;
-  background: linear-gradient(#86efac 0 100%) left / 0 no-repeat;
-  color: transparent;
-  background-clip: text;
-  visibility: visible;
-  position: absolute;
-}
-
 .nav-item,
 .nav-social {
   position: relative;
@@ -205,46 +186,8 @@ function scrollNavbarHandler(): void {
   height: 14px;
 }
 
-.hamburguer {
-  z-index: 1000;
-  position: relative;
-  top: 0px;
-  right: 0px;
-  content: '';
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  transition: 0.3s ease;
-}
 
-.hamburguer::before {
-  z-index: 1000;
-  position: absolute;
-  top: -10px;
-  right: 0px;
-  content: '';
-  width: 30px;
-  height: 2px;
-  margin-top: 20px;
-  background-color: #86efac;
-  transition: 0.3s ease;
-  pointer-events: none;
-}
 
-.hamburguer::after {
-  z-index: 1000;
-  position: absolute;
-  right: 0px;
-  top: 20px;
-  content: '';
-  width: 20px;
-  height: 2px;
-  background-color: #86efac;
-
-  transition: 0.3s ease;
-  pointer-events: none;
-  /* Permite que el contenedor maneje el hover */
-}
 
 @media (max-width: 760px) {
   nav>ul {
@@ -256,38 +199,8 @@ function scrollNavbarHandler(): void {
     border-radius: 0px !important;
     right: 0%;
     display: flex;
-    /* Asegura que el contenido de nav-list se muestre */
     justify-items: center;
     align-items: center;
-    /* Alinea los elementos al centro */
   }
-}
-
-.inactive {
-  overflow: auto;
-  opacity: 0;
-}
-
-.active {
-  overflow: hidden;
-  opacity: 1;
-}
-
-.hamburguer:hover::after {
-  width: 30px;
-}
-
-.hamburguer.active::before {
-  transform: rotate(45deg);
-  /* La barra superior rota */
-  top: -10px;
-}
-
-.hamburguer.active::after {
-  width: 30px;
-  transform: rotate(-45deg);
-  /* Ejemplo de movimiento hacia arriba */
-  top: 10px;
-  /* Se mueve hacia arriba */
 }
 </style>
