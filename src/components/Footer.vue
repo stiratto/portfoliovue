@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const footerItems = [{ Twitter: "https://x.com/stirattou" }, { Github: "https://github.com/stiratto/" }]
+const footerItems = [{ Github: "https://github.com/stiratto/" }]
 </script>
 
 <template>
