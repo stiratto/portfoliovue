@@ -24,7 +24,7 @@ let lastDirectionScrolled = ref('')
 let prevValue = ref(0)
 
 function watchScroll() {
-  if (prevValue > window.scrollY) {
+  if (prevValue.value > window.scrollY) {
     userScrolledUp.value = true
     console.log("up")
 
@@ -32,7 +32,7 @@ function watchScroll() {
     userScrolledUp.value = false
     console.log("down")
   }
-  prevValue = window.scrollY
+  prevValue.value = window.scrollY
 }
 
 </script>
