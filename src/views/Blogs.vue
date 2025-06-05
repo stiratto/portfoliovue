@@ -27,10 +27,10 @@ onMounted(async () => {
 
 
 <template>
-  <div class="p-8 sm:px-[9em] flex flex-col items-center
+  <div class="mt-28 md:mt-44 p-8 sm:px-[9em] flex flex-col items-center
     justify-start text-left gap-8">
-    <h1 class="text-4xl sm:text-7xl font-black text-green-300">
-      <span class="text-[#1c1c1c]">/</span>blogs
+    <h1 class="text-4xl sm:text-7xl font-black text-[#ffdd33]">
+      <span class="text-[#95A99F]">/</span>blogs
     </h1>
     <blog-card v-for="post in posts" v-bind="post"></blog-card>
   </div>

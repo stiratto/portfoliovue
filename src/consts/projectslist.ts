@@ -19,9 +19,9 @@ const projects = [
   {
     title: 'nyctara perfumes',
     description: 'An E-Commerce for a perfume business.',
-    thumbnail: '/wallhaven-4xo2jo_1920x1080.png',
+    thumbnail: '/nyctaramockup.png',
     github: 'https://github.com/stiratto',
-    page: 'https://github.com/stiratto',
+    page: 'https://nyctara-perfumes.vercel.app/',
     tags: [
       { label: 'React', icon: ReactIcon },
       { label: 'Tailwind', icon: TailwindIcon },

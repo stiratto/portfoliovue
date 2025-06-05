@@ -26,7 +26,7 @@ function onEnter(el: any) {
 </script>
 
 <template>
-  <main class="flex flex-col gap-24 mt-48">
+  <main class="flex flex-col gap-24 mt-96 md:mt-48">
 
     <section class="w-full relative flex flex-col-reverse lg:flex-row
     lg:justify-between lg:items-center    px-4

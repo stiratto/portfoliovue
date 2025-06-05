@@ -20,29 +20,35 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="group relative overflow-hidden shadow-md hover:shadow-xl ">
+  <div class="group relative overflow-hidden shadow-md hover:shadow-xl
+    h-96">
     <div class="absolute top-0 -0 right-0 z-20 w-full h-full opacity-50 bg-black"></div>
+
+    <!--  -->
+
     <div class="relative">
       <img :src="thumbnail" class="thumbnail-project object-cover aspect-square
-        md:aspect-[16/9]  scale-150 rounded-xl group-hover:scale-105 transition-all" />
+        md:aspect-[16/9]  scale-150 rounded-xl group-hover:scale-105
+        transition-all w-full" />
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
-      <h1 className="text-2xl  md:text-5xl font-bold 
+      <h1 className="text-2xl  lg:text-5xl font-bold 
         text-[#ffdd33] ">
         {{ title }}
       </h1>
-      <p class="max-w-lg text-sm text-white
-      ">{{ description }}</p>
-      <ul class="flex gap-4 break-all">
+      <p class="text-sm text-white max-w-3xl
+      truncate">{{ description }}</p>
+      <!-- <ul class="flex gap-4 break-all">
         <li v-for="(tag, index) in tags" :key="index"
           class="tag flex gap-2 items-center p-2 text-sm rounded-full bg-[#111111]">
           <span>{{ tag.label }}</span>
           <component :is="tag.icon" class="w-4 h-4" />
         </li>
-      </ul>
+     </ul>-->
       <div class="flex gap-2 justify-between">
-        <a :href="github" class="flex items-center gap-2 cursor-pointer item">
+        <a :href="github" class="flex items-center gap-2
+          cursor-pointer item text-xs md:text-lg">
           <github class="w-4 h-4"></github>View code
         </a>
 

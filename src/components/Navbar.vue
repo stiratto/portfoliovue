@@ -12,157 +12,53 @@ let userScrolledUp = ref(true)
 let oldY = ref(0)
 let navbarHovered = ref(false)
 
-// watches the active class, if the navbar changes to true
-// add no-scroll so the user cannot scroll
-// else, remove it
-watch(activeClass, (newValue) => {
-  return newValue
-    ? document.body.classList.add('no-scroll')
-    : document.body.classList.remove('no-scroll')
-})
-
-// add event listeners at mount
 onMounted(() => {
-  window.addEventListener('scroll', scrollNavbarHandler)
-  window.addEventListener('click', handleClickOutside)
-  window.addEventListener('resize', handleResize)
-})
-
-// remove at unmount
-onUnmounted((): void => {
-  window.removeEventListener('scroll', scrollNavbarHandler)
-  window.removeEventListener('click', handleClickOutside)
-  window.removeEventListener('resize', handleResize)
+  window.addEventListener('scroll', watchScroll)
 })
 
 function isMobile(): boolean {
   return window.innerWidth <= 760
 }
 
-function handleResize(): void {
-  activeClass.value = isMobile()
-}
+let lastDirectionScrolled = ref('')
+let prevValue = ref(0)
 
-// animation when the user hides navbar
-function onLeave(el: any) {
-  let tl = gsap.timeline({ repeat: 2, repeatDelay: 0.3 })
-
-  gsap.set('.navItemsDiv', { y: '0', opacity: 1 })
-
-  tl.to('.navItemsDiv', {
-    opacity: 0,
-    y: '+=100',
-    duration: 0.3,
-  })
-
-  gsap.set('.navSocialsDiv', { y: '0', opacity: 1 })
-
-  tl.to('.navSocialsDiv', {
-    opacity: 0,
-    y: '+=100',
-    duration: 0.3,
-  })
-
-  gsap.to(el, {
-    width: 0,
-    height: 0,
-    duration: 0.3,
-  })
-}
-
-// animation when user opens the navbar
-function onEnter(el: any) {
-  let tl = gsap.timeline({})
-  gsap.set(el, { width: 0, height: 0 })
-
-  if (isMobile()) {
-    tl.to(el, {
-      rotate: 0,
-      width: '100%',
-      height: '100%',
-      duration: 0.3,
-    })
-  } else {
-    tl.to(el, {
-      width: 'auto',
-      height: 'auto',
-      duration: 0.3,
-    })
-  }
-  gsap.set('.navItemsDiv', { y: '+=100', opacity: 0 })
-
-  tl.to('.navItemsDiv', {
-    opacity: 1,
-    y: 0,
-    duration: 0.3,
-  })
-
-  gsap.set('.navSocialsDiv', { y: '+=100', opacity: 0 })
-
-  tl.to('.navSocialsDiv', {
-    opacity: 1,
-    y: 0,
-    duration: 0.3,
-  })
-}
-
-let currentPosition = ref(0)
-let valueIsNotZero = ref(false)
-let animationTriggered = ref(false)
-
-watch(currentPosition, (newValue) => {
-  if (newValue > 0 && !animationTriggered.value) {
-    valueIsNotZero.value = true
-    animationTriggered.value = true
-
-    let tl = gsap.timeline({})
-    tl.fromTo('.t', { x: '0', rotate: 0, duration: 1 }, { x: '-100', rotate: 90, duration: 1 }, 0)
-  }
-})
-function handleClickOutside(e: any) {
-  if (containerRef.value && !containerRef.value.contains(e.target)) {
-    activeClass.value = false
-  }
-}
-
-function scrollNavbarHandler(): void {
-  currentPosition.value = window.scrollY
-  let Y: number = window.scrollY
-  if (Y < oldY.value) {
-    navbarHovered.value = true
+function watchScroll() {
+  if (prevValue > window.scrollY) {
     userScrolledUp.value = true
-  } else if (Y > oldY.value) {
-    userScrolledUp.value = false
-    navbarHovered.value = false
-  }
+    console.log("up")
 
-  oldY.value = Y
+  } else {
+    userScrolledUp.value = false
+    console.log("down")
+  }
+  prevValue = window.scrollY
 }
+
 </script>
 
 <template>
   <nav class="z-[1000] flex flex-col justify-between mx-auto
-       w-full transition-all top-0 left-0 !bg-[#080808] fixed px-24" ref="container-ref" :class="{
-        navbaractive: userScrolledUp,
-        navbarinactive: !userScrolledUp,
-      }" @mouseover="navbarHovered = true" @mouseleave="navbarHovered = false">
+       w-full transition-all top-0 left-0 !bg-[#080808] fixed md:px-24" ref="container-ref">
     <router-link to="/" class="pointer text-sm text-center py-2
       text-[#95a99f] nav-logo transition-all border border-[#ffdd33]
       w-full">
-      stiratto portfolio
+      stiratto's portfolio
       <div class="navSocialsDiv">
         <a v-for="(item, index) in socials" :id="Object.keys(item)[0]" :href="Object.values(item)[0]"
-          :key="Object.keys(item)[0] + index" class="p-2 nav-social">
+          :key="Object.keys(item)[0] + index" class="p-2 nav-social" target="_blank">
           {{ Object.keys(item)[0] }}
         </a>
       </div>
     </router-link>
 
     <ul class="flex  shadow-xl
-     text-white border-b border-[#ffdd33] p-8 gap-12">
+     text-white border-b border-[#ffdd33] p-8 gap-12 flex-col
+     md:flex-row hidden opacity-0 transition-opacity duration-1000
+     delay-700" :class="{ active: userScrolledUp }">
       <router-link v-for="(item, index) in items" :id="Object.keys(item)[0]" :to="Object.values(item)[0]"
         :key="Object.keys(item)[0] + index" class="text-sm
-          nav-item gap-2 ">
+          nav-item gap-2 w-min">
         {{ Object.keys(item)[0] }}
       </router-link>
     </ul>
@@ -175,6 +71,11 @@ function scrollNavbarHandler(): void {
   position: relative;
 }
 
+.active {
+  opacity: 1;
+  display: flex;
+}
+
 .nav-item:hover::before,
 .nav-social:hover::before {
   position: absolute;
@@ -185,9 +86,4 @@ function scrollNavbarHandler(): void {
   width: 24px;
   height: 14px;
 }
-
-
-
-
-
 </style>
