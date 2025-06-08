@@ -15,48 +15,45 @@ const props = defineProps({
   thumbnail: { type: String, required: true },
   tags: { type: Array as PropType<Tag[]>, required: false },
   page: { type: String, required: false },
-  github: { type: String, required: false },
+  client_code: { type: String, required: false },
+  server_code: { type: String, required: false },
+  github: { type: String, required: false }
 });
 </script>
 
 <template>
-  <div class="group relative overflow-hidden shadow-md hover:shadow-xl h-96">
-    <div
-      class="absolute top-0 -0 right-0 z-20 w-full h-full opacity-50 bg-black"
-    ></div>
+  <div class="group relative overflow-hidden shadow-md hover:shadow-xl
+    h-96 w-full">
+    <div class="absolute top-0 -0 right-0 z-20 w-full h-full opacity-50 bg-black"></div>
 
     <div class="relative">
-      <img
-        :src="thumbnail"
-        class="object-cover aspect-square scale-150 rounded-xl group-hover:scale-105 transition-all w-full"
-      />
+      <img :src="thumbnail" class="scale-150 rounded-xl group-hover:scale-105 transition-all w-full" />
     </div>
 
-    <div
-      class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap"
-    >
-      <h1
-        className="text-2xl  lg:text-5xl font-bold 
-        text-[#ffdd33] "
-      >
+    <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
+      <h1 className="text-2xl  lg:text-5xl font-bold 
+        text-[#ffdd33] ">
         {{ title }}
       </h1>
       <p class="text-sm text-white max-w-3xl truncate">{{ description }}</p>
 
-      <div class="flex gap-2 justify-between">
-        <a
-          :href="github"
-          class="flex items-center gap-2 cursor-pointer item text-xs md:text-lg"
-          target="_blank"
-        >
+      <div class="flex flex-col sm:flex-row gap-2 justify-between">
+        <!-- if no github provided, show client and server code -->
+        <div v-if="!github">
+          <a :href="client_code" class="flex items-center gap-2 cursor-pointer item text-xs md:text-lg" target="_blank">
+            <github class="w-4 h-4"></github>View client code
+          </a>
+          <a :href="server_code" class="flex items-center gap-2 cursor-pointer item text-xs md:text-lg" target="_blank">
+            <github class="w-4 h-4"></github>View server code
+          </a>
+        </div>
+        <!-- if github provided, only 1 repository-->
+        <a v-else :href="github" class="flex items-center gap-2 cursor-pointer item text-xs md:text-lg" target="_blank">
           <github class="w-4 h-4"></github>View code
         </a>
 
-        <a
-          :href="page"
-          class="flex items-center gap-2 cursor-pointer item"
-          target="_blank"
-        >
+
+        <a v-if="page" :href="page" class="flex items-center gap-2 cursor-pointer item" target="_blank">
           <move-up-right class="w-4 h-4"></move-up-right> Live view
         </a>
       </div>
