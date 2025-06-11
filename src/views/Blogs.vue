@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import matter from 'gray-matter';
 import BlogCard from '@/components/BlogCard.vue'
-import { Buffer } from 'buffer'; // Importamos el polyfill
+import { Buffer } from 'buffer'; 
 const posts = ref([]);
 
 onMounted(async () => {
@@ -12,7 +12,7 @@ onMounted(async () => {
   const loadedPosts = []
   for (const path in files) {
     const content = await files[path]()
-    const { data, content: markdownContent } = matter(content); // Extraer frontmatter
+    const { data, content: markdownContent } = matter(content); 
 
     loadedPosts.push({
       title: data.title || path.split('/').pop().replace('.md', ''),
