@@ -48,6 +48,12 @@ const projects = [
     ],
   },
   {
+    title: 'node.js file-based router (next.js like) & framework (currently being built)',
+    description: 'A Node.js router and framework from scratch, using 0 extra libraries with support for middlewares, dynamic routing, etc',
+    thumbnail: 'https://i.imgur.com/vV6X3O8.png',
+    github: 'https://github.com/stiratto/node-router'
+  },
+  {
     title: 'c directory reader',
     description: 'A simple directory reader made in C using recursivity, just for fun',
     thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png',
@@ -60,13 +66,8 @@ const projects = [
     github: 'https://github.com/stiratto/uber-automatize',
 
   },
-  {
-    title: 'haxball room',
-    description: 'A room for the football web minigame called Haxball, WebSockets API using FastAPI and SQLModel',
-    thumbnail: 'https://www.haxball.com/Km7Kx9XL/s/haxball-big-min.png',
-    github: 'https://github.com/stiratto/hax-room/tree/main',
 
-  }
+
 ]
 
 export default projects

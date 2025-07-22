@@ -27,7 +27,8 @@ const props = defineProps({
     <div class="absolute top-0 -0 right-0 z-20 w-full h-full opacity-50 bg-black"></div>
 
     <div class="relative">
-      <img :src="thumbnail" class="scale-150 rounded-xl group-hover:scale-105 transition-all w-full" />
+      <img :src="thumbnail" class="scale-150 rounded-xl
+      group-hover:scale-105 transition-all w-full object-top-left!" />
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
