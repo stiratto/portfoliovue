@@ -48,8 +48,9 @@ const projects = [
     ],
   },
   {
-    title: 'node.js file-based router (next.js like) & framework (currently being built)',
-    description: 'A Node.js router and framework from scratch, using 0 extra libraries with support for middlewares, dynamic routing, etc',
+    title: 'node.js file-based router & framework ',
+    description: 'A Node.js router and framework from scratch, using 0 extra libraries with support for middlewares, dynamic routing, etc. IN CURRENT DEVELOPMENT)',
+
     thumbnail: 'https://i.imgur.com/vV6X3O8.png',
     github: 'https://github.com/stiratto/node-router'
   },
