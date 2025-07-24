@@ -60,14 +60,14 @@ const projects = [
     thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png',
     github: 'https://github.com/stiratto/directory-reader-c',
   },
-  {
-    title: 'uber eats manager platform automation',
-    description: 'A Puppeteer bot which purpose was for automating Uber Eats Manager reviews system but Uber didn\'t exposed client\'s number but still has useful things like logging of orders',
-    thumbnail: 'https://res.cloudinary.com/read-cv/image/upload/c_limit,h_2048,w_2048/v1/1/pages/NV3Dn6tZccTNDYiUu02GtNnJDor2/umzgS76rXF5JejXEuEWr/97696a95-a318-416d-b5a3-5d3898445414.png?_a=DATAdtfiZAA0',
-    github: 'https://github.com/stiratto/uber-automatize',
-
-  },
-
+  // {
+  //   title: 'uber eats manager platform automation',
+  //   description: 'A Puppeteer bot which purpose was for automating Uber Eats Manager reviews system but Uber didn\'t exposed client\'s number but still has useful things like logging of orders',
+  //   thumbnail: 'https://res.cloudinary.com/read-cv/image/upload/c_limit,h_2048,w_2048/v1/1/pages/NV3Dn6tZccTNDYiUu02GtNnJDor2/umzgS76rXF5JejXEuEWr/97696a95-a318-416d-b5a3-5d3898445414.png?_a=DATAdtfiZAA0',
+  //   github: 'https://github.com/stiratto/uber-automatize',
+  //
+  // },
+  //
 
 ]
 
