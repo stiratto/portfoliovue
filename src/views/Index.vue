@@ -30,23 +30,20 @@ function onEnter(el: any) {
 <template>
   <main class="flex flex-col gap-24">
     <section
-      class="w-full relative flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center px-4 border border-[#ffdd33]"
+      class="w-full relative flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center px-4 border border-[#5f8787]"
       ref="main"
     >
       <div
         class="py-24 w-full text-white gap-8 rounded-2xl p-4 flex flex-col lg:justify-center"
       >
-        <transition
-          tag="div"
-          v-show="activeClass"
-          @enter="onEnter"
-          class="text-5xl md:text-8xl flex text-[#ffdd33] font-extrabold text-start"
+        <div
+          class="text-5xl md:text-8xl flex font-extrabold text-start"
         >
-          <h1 id="full" class="tracking-tighter !text-[#ffdd33]">
+          <h1 id="full" class="tracking-tighter !text-[#e78a53] text-[clamp(48px,5vw,128px)]">
             Jesus <br />
             Moran
           </h1>
-        </transition>
+        </div>
         <p class="lg:text-lg text-start max-w-sm text-white">
           +3 years of experience. Software Engineer from Maracaibo, Venezuela
           🇻🇪.

@@ -5,9 +5,9 @@ import projects from "@/consts/projectslist.ts";
 
 <template>
   <div
-    class="p-8 lg:px-[9em] flex flex-col justify-center items-center gap-8 border border-[#ffdd33]"
+    class="p-8 lg:px-[9em] flex flex-col justify-center items-center gap-8 border border-[#5f8787]"
   >
-    <h1 class="text-4xl lg:text-7xl font-black text-[#ffdd33]">
+    <h1 class="text-4xl lg:text-7xl font-black text-[#e78a53]">
       <span class="text-[#95a99f]">/</span>projects
     </h1>
     <project

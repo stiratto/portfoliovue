@@ -4,7 +4,7 @@ const skillslist = [
    {
       skilltitle: "Backend",
       skilltitleicon: Package,
-      skilldescription: 'With experience on Java Springboot NestJS, ExpressJS PostgreSQL, Prisma ORM, I\'ve been able to build complete Web Apps'
+      skilldescription: 'With experience on Java Springboot NestJS, ExpressJS PostgreSQL, Prisma ORM, I\'ve been able to build complete Web Apps. With the help of TypeScript and NodeJS, I\'ve also built routers from scratch.'
    },
    {
       skilltitle: "Frontend",

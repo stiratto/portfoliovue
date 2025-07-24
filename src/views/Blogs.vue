@@ -29,7 +29,7 @@ onMounted(async () => {
 <template>
   <div class="mt-28 md:mt-44 p-8 sm:px-[9em] flex flex-col items-center
     justify-start text-left gap-8">
-    <h1 class="text-4xl sm:text-7xl font-black text-[#ffdd33]">
+    <h1 class="text-4xl sm:text-7xl font-black text-[#e78a53]">
       <span class="text-[#95A99F]">/</span>blogs
     </h1>
     <blog-card v-for="post in posts" v-bind="post"></blog-card>

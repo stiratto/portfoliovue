@@ -3,13 +3,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'CommitMono';
+  src: url('/fonts/CommitMono/CommitMonoNerdFont-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CommitMono';
+  src: url('/fonts/CommitMono/CommitMonoNerdFont-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 .navbaractive {
   background-color: #95A99F;
 }
 
 .blog-content {
   padding: 10px;
-  font-family: 'monospace';
+  font-family: 'CommitMono';
   font-size: large;
 }
 /* Encabezados dentro de .blog-content */
@@ -18,7 +33,6 @@
     font-weight: bold;
     
 }
-
 
 .blog-content h1 {
     width: fit-content;
@@ -29,12 +43,12 @@
 
 .blog-content h1 {
     font-size: 2.5em;
-    color: #ffdd33;
+    color: #e78a53;
 }
 
 .blog-content h2 {
     font-size: 2em;
-    color: #ffdd33;
+    color: #e78a53;
 }
 
 .blog-content h3 {
@@ -44,17 +58,17 @@
 
 .blog-content h4 {
     font-size: 1.5em;
-    color: #ffdd33;
+    color: #e78a53;
 }
 
 .blog-content h5 {
     font-size: 1.25em;
-    color: #ffdd33;
+    color: #e78a53;
 }
 
 .blog-content h6 {
     font-size: 1em;
-    color: #ffdd33;
+    color: #e78a53;
 }
 
 /* Párrafos dentro de .blog-content */
@@ -102,7 +116,7 @@
 .blog-content code {
     font-family: 'Courier New', monospace;
     border-radius: 4px;
-    background-color: #282828;
+    background-color: #121110;
     padding: 2px;
     /* color: #73D936; */
 }
@@ -158,10 +172,13 @@ body {
 
 body {
   /*background-color: #5B7553;*/
-  background-color: #080808;
+  background-color: #121113;
   /* padding-top: 6rem; */
   color: white;
-  font-family: 'monospace';
+  font-family: 'CommitMono', monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   padding: 0px 20rem 0px 20rem;
 }
 
@@ -202,5 +219,5 @@ body {
 h1 {
   font-size: 40px;
   font-weight: bold;
-  color: #ffdd33;
+  color: #e78a53;
 }

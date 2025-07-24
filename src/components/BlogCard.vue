@@ -19,7 +19,7 @@ defineProps({
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
       <h1 className="text-2xl md:text-5xl font-bold 
-        text-[#ffdd33] ">
+        text-[#e78a53] ">
         {{ title }}
       </h1>
       <p class="max-w-lg text-sm">{{ description }}</p>

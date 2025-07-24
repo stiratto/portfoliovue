@@ -42,30 +42,8 @@ function watchScroll() {
 
 <template>
   <nav ref="container-ref" class="fixed z-[1000] top-0 left-0 w-full">
-    <div
-      class="flex flex-col justify-between mx-auto w-full transition-all top-0 left-0 !bg-[#080808] md:px-24"
-    >
-      <router-link
-        to="/"
-        class="pointer text-sm text-center py-2 text-[#95a99f] nav-logo transition-all border border-[#ffdd33]"
-      >
-        stiratto's portfolio
-        <div class="navSocialsDiv">
-          <a
-            v-for="(item, index) in socials"
-            :id="Object.keys(item)[0]"
-            :href="Object.values(item)[0]"
-            :key="Object.keys(item)[0] + index"
-            class="p-2 nav-social"
-            target="_blank"
-          >
-            {{ Object.keys(item)[0] }}
-          </a>
-        </div>
-      </router-link>
-    </div>
     <ul
-      class="flex shadow-xl bg-[#080808] text-white border-b border-[#ffdd33] p-8 gap-12 flex-col md:flex-row opacity-0 transition-opacity md:mx-24"
+      class="flex justify-center items-center shadow-xl bg-[#121113] text-white border-b border-[#5f8787] p-8 gap-12 flex-col md:flex-row opacity-0 transition-opacity md:mx-24"
       :class="{ active: userScrolledUp }"
     >
       <router-link

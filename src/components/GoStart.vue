@@ -26,7 +26,7 @@ function displayBtn() {
 <template>
   <button
     @click="goto"
-    class="upBtn fixed bottom-4 right-4 p-4 bg-[#1c1c1c] hover:bg-[#ffdd33] z-[5000]"
+    class="upBtn fixed bottom-4 right-4 p-4 bg-[#1c1c1c] hover:bg-[#888888] z-[5000]"
   >
     <MoveUp />
   </button>
