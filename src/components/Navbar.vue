@@ -43,7 +43,7 @@ function watchScroll() {
 <template>
   <nav ref="container-ref" class="fixed z-[1000] top-0 left-0 w-full">
     <ul
-      class="flex justify-center items-center shadow-xl bg-[#121113] text-white border-b border-[#5f8787] p-8 gap-12 flex-col md:flex-row opacity-0 transition-opacity md:mx-24"
+      class="flex justify-center items-center bg-[#121113] text-white p-8 gap-12 flex-col md:flex-row opacity-0 transition-opacity md:mx-24"
       :class="{ active: userScrolledUp }"
     >
       <router-link

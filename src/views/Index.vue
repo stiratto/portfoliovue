@@ -30,24 +30,27 @@ function onEnter(el: any) {
 <template>
   <main class="flex flex-col gap-24">
     <section
-      class="w-full relative flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center px-4 border border-[#5f8787]"
+      class="w-full relative flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center px-4"
       ref="main"
     >
       <div
         class="py-24 w-full text-white gap-8 rounded-2xl p-4 flex flex-col lg:justify-center"
       >
         <div
-          class="text-5xl md:text-8xl flex font-extrabold text-start"
+          class="text-5xl md:text-8xl flex font-extrabold text-start
+          items-center justify-between"
         >
           <h1 id="full" class="tracking-tighter !text-[#e78a53] text-[clamp(48px,5vw,128px)]">
             Jesus <br />
             Moran
           </h1>
-        </div>
-        <p class="lg:text-lg text-start max-w-sm text-white">
+          <p class="lg:text-lg text-start max-w-sm text-white">
           +3 years of experience. Software Engineer from Maracaibo, Venezuela
           🇻🇪.
         </p>
+        </div>
+        
+      
 
         <div class="flex gap-8 btn-div">
           <button
@@ -64,14 +67,21 @@ function onEnter(el: any) {
         </div>
       </div>
     </section>
+    <div class="text-[clamp(1rem,2vw,4rem)] max-w-6xl">
+        <p>I'm Jesus Moran, a developer from Venezuela with over 3
+        years of (not professional) experience. @stiratto is my
+        nickname.</p>
+        <p>I've worked on many projects throughout my career,
+        including Full-Stack projects, reverse engineering and
+        re-building over 10.000 thousand lines of ofuscated and
+        minified code in a single project, I've done ECommerces, I've built multi-platform
+        apps using Tauri and a Router built in Node.js.</p>
+      </div>
 
     <div>
       <Projects />
     </div>
 
-    <div ref="sectionSkills">
-      <Skills></Skills>
-    </div>
   </main>
 </template>
 
