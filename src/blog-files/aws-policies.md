@@ -1,4 +1,10 @@
-# The mental model that helped me understand AWS IAM policies.
+---
+title: "The mental model that helped me understand AWS IAM policies"
+thumbnail: "https://miro.medium.com/0*xwQoRQNR1alAlLRW"
+description: "You don't understand AWS IAM policies? Are you making
+all of your resources public? This is for you."
+---
+
 
 > An entity can be a IAM user, role or service.
 
