@@ -58,7 +58,7 @@ onMounted(async () => {
   <main class="mt-80 md:mt-48 pb-16 max-w-3xl mx-auto w-full">
     <div class="border-l border-[#111111] w-fit pl-8">
 
-      <h1>{{ post.title }}</h1>
+      <h1 class="">{{ post.title }}</h1>
       <p class="">{{ post.description }}</p>
     </div>
     <div v-html="post.content" class="blog-content max-w-4xl text-clip"></div>
