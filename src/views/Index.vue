@@ -37,14 +37,14 @@ function onEnter(el: any) {
         class="py-24 w-full text-white gap-8 rounded-2xl p-4 flex flex-col lg:justify-center"
       >
         <div
-          class="text-5xl md:text-8xl flex font-extrabold text-start
-          items-center justify-between"
+          class="text-5xl md:text-8xl flex flex-col md:flex-row font-extrabold text-start
+          items-start md:items-center gap-4 justify-between"
         >
           <h1 id="full" class="tracking-tighter !text-[#e78a53] text-[clamp(48px,5vw,128px)]">
             Jesus <br />
             Moran
           </h1>
-          <p class="lg:text-lg text-start max-w-sm text-white">
+          <p class="text-lg text-start max-w-sm text-white">
           +3 years of experience. Software Engineer from Maracaibo, Venezuela
           🇻🇪.
         </p>
