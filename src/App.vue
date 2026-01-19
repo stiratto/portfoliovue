@@ -7,7 +7,7 @@ import { onMounted, onUnmounted } from "vue";
 </script>
 
 <template>
-  <main class="mt-[20rem] sm:mt-[12rem]">
+  <main class="mt-[18rem] md:mt-[8rem]">
     <go-start></go-start>
     <navbar></navbar>
     <router-view></router-view>

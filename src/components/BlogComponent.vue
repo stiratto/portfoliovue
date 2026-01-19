@@ -11,7 +11,6 @@ onMounted(async () => {
   window.Buffer = Buffer
   const route = useRoute()
 
-  // Actual default values
   const md = markdownit({
     highlight: function (str, lang) {
       if (lang && hljs.getLanguage(lang)) {
@@ -28,9 +27,15 @@ onMounted(async () => {
     }
   });
 
+  // replaces every apostrophe with a white space
 
-
-  const filename = route.params.name.replace(/[-]+/g, " ").replace(/\b[a-z]/g, (letter) => {
+  // replaces                             
+  //                                        !\w,\w | !\w \w   | !\w \w (\b)
+  //                                        - Aws - Iam       Policies
+  // aws-iam-policies -> aws iam policies -> aws    iam       policies
+  let filename = route.params.name.replace(/[-]+/g, " ").replace(/\b[a-z]/g, (letter) => {
+    // we dont want Aws Iam Policies, because in the file, the title
+    // is AWS IAM Policies. how cna we do that?
     return letter.toUpperCase();
   });
 
@@ -40,6 +45,17 @@ onMounted(async () => {
     const content = await files[path]()
 
     const { data } = matter(content)
+
+   filename = filename.split('').map((l, i) => {
+      const isUppercase = str => str === data.title[i].toUpperCase()
+      if (isUppercase(data.title[i]) && !isUppercase(l)) {
+        return l.toUpperCase()
+      }
+      return l
+    }).join("")
+
+    console.log('----')
+
     if (data.title === filename) {
       const { content: markdownContent } = matter(content)
       post.value = {
@@ -48,6 +64,7 @@ onMounted(async () => {
         thumbnail: data.thumbnail,
         content: md.render(markdownContent)
       }
+      return
     }
   }
 })
@@ -55,14 +72,9 @@ onMounted(async () => {
 
 
 <template>
-  <main class="mt-80 md:mt-48 pb-16 max-w-3xl mx-auto w-full">
-    <div class="border-l border-[#111111] w-fit pl-8">
-
-      <h1 class="">{{ post.title }}</h1>
-      <p class="">{{ post.description }}</p>
-    </div>
+    <h1 class="border-[#e78a53] border-l pl-4 text-white
+      text-lg">{{ post.title }}</h1>
     <div v-html="post.content" class="blog-content max-w-4xl text-clip"></div>
-  </main>
 </template>
 
 
