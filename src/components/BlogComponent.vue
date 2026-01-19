@@ -46,15 +46,17 @@ onMounted(async () => {
 
     const { data } = matter(content)
 
+    if (data.title[0] !== filename[0]) {
+      continue 
+    }
    filename = filename.split('').map((l, i) => {
+
       const isUppercase = str => str === data.title[i].toUpperCase()
       if (isUppercase(data.title[i]) && !isUppercase(l)) {
         return l.toUpperCase()
       }
       return l
     }).join("")
-
-    console.log('----')
 
     if (data.title === filename) {
       const { content: markdownContent } = matter(content)
