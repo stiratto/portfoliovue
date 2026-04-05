@@ -28,19 +28,20 @@ function onEnter(el: any) {
 </script>
 
 <template>
-  <main class="flex flex-col gap-24">
+  <main class="flex flex-col gap-24 ">
+
     <section
       class="w-full relative flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center px-4"
       ref="main"
     >
       <div
-        class="py-24 w-full text-white gap-8 rounded-2xl p-4 flex flex-col lg:justify-center"
+        class="py-24 w-full gap-8 rounded-2xl p-4 flex flex-col lg:justify-center"
       >
         <div
           class="text-5xl md:text-8xl flex flex-col md:flex-row font-extrabold text-start
           items-start md:items-center gap-4 justify-between"
         >
-          <h1 id="full" class="tracking-tighter !text-[#e78a53] text-[clamp(48px,5vw,128px)]">
+          <h1 id="full" class="tracking-tighter !text-fg-principal text-[clamp(48px,5vw,128px)]">
             Jesus <br />
             Moran
           </h1>

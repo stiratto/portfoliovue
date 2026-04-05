@@ -10,6 +10,7 @@ let post = ref({})
 onMounted(async () => {
   window.Buffer = Buffer
   const route = useRoute()
+  const route2 = useRoute()
 
   const md = markdownit({
     highlight: function (str, lang) {
@@ -47,9 +48,9 @@ onMounted(async () => {
     const { data } = matter(content)
 
     if (data.title[0] !== filename[0]) {
-      continue 
+      continue
     }
-   filename = filename.split('').map((l, i) => {
+    filename = filename.split('').map((l, i) => {
 
       const isUppercase = str => str === data.title[i].toUpperCase()
       if (isUppercase(data.title[i]) && !isUppercase(l)) {
@@ -74,9 +75,9 @@ onMounted(async () => {
 
 
 <template>
-    <h1 class="border-[#e78a53] border-l pl-4 text-white
+  <h1 class="border-l pl-4 text-white
       text-lg">{{ post.title }}</h1>
-    <div v-html="post.content" class="blog-content max-w-4xl text-clip"></div>
+  <div v-html="post.content" class="blog-content max-w-4xl text-clip"></div>
 </template>
 
 

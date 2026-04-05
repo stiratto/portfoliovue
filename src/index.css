@@ -1,18 +1,26 @@
 /* ./index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+@theme {
+    --font-display: "VictorMono", monospace; 
+    --font-courier: 'Courier New', monospace;
+    --color-background: #241623;
+    --color-fg-principal: #bdcaaf;
+}
 
 @font-face {
-  font-family: 'CommitMono';
-  src: url('/fonts/CommitMono/CommitMonoNerdFont-Bold.otf') format('opentype');
+  font-family: 'VictorMono';
+  src: url('/fonts/VictorMono/VictorMono-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'CommitMono';
-  src: url('/fonts/CommitMono/CommitMonoNerdFont-Regular.otf') format('opentype');
+  font-family: 'VictorMono';
+  src: url('/fonts/VictorMono/VictorMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -23,7 +31,7 @@
 
 .blog-content {
   padding: 10px;
-  font-family: 'CommitMono';
+  font-family: var(--font-display);
   font-size: large;
 }
 
@@ -35,14 +43,14 @@
 
 .blog-content h1 {
     font-size: 1em;
-    color: #e78a53;
+    color: var(--color-fg-principal);
     width: fit-content;
     border-bottom: 1px solid white;
 }
 
 .blog-content h2 {
     font-size: 1em;
-    color: #e78a53;
+    color: var(--color-fg-principal);
 }
 
 .blog-content h3 {
@@ -52,17 +60,17 @@
 
 .blog-content h4 {
     font-size: 1em;
-    color: #e78a53;
+    color: var(--color-fg-principal);
 }
 
 .blog-content h5 {
     font-size: 1em;
-    color: #e78a53;
+    color: var(--color-fg-principal);
 }
 
 .blog-content h6 {
     font-size: 1em;
-    color: #e78a53;
+    color: var(--color-fg-principal);
 }
 
 .blog-content p {
@@ -102,7 +110,7 @@
 }
 
 .blog-content code {
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-courier);
     border-radius: 4px;
     background-color: #121110;
     padding: 2px;
@@ -114,7 +122,7 @@
 }
 
 .blog-content pre {
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-courier);
     background-color: #111111;
     border-radius: 4px;
     overflow-x: auto;
@@ -156,11 +164,10 @@ body {
 
 
 body {
-  /*background-color: #5B7553;*/
-  background-color: #121113;
+  background-color: var(--color-background);
   /* padding-top: 6rem; */
   color: white;
-  font-family: 'CommitMono', monospace;
+  font-family: var(--font-display);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -204,5 +211,5 @@ body {
 h1 {
   font-size: 40px;
   font-weight: bold;
-  color: #e78a53;
+  color: var(--color-fg-principal);
 }

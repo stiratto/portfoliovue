@@ -33,8 +33,7 @@ const props = defineProps({
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 px-6 md:py-6 mb-8 flex flex-col gap-4 justify-end z-50 word-wrap">
-      <h1 className="text-[clamp(1px,5vw,3em)] font-bold 
-        text-[#e78a53] ">
+      <h1 className="text-[clamp(1px,5vw,3em)] font-bold ">
         {{ title }}
       </h1>
       <p class="text-sm text-white max-w-3xl truncate">{{ description }}</p>
